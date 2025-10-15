@@ -1,20 +1,13 @@
 customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.12.0
+  distribution_code_name: trime
+  distribution_version: "nightly-3-gbda9e35a"
   generator: "Rime::SwitcherSettings"
-  modified_time: "Tue Jan 22 08:43:29 2019"
-  rime_version: 1.3.2
+  modified_time: "Wed Oct 15 11:06:26 2025"
+  rime_version: 1.14.0
 patch:
+  "ascii_composer/good_old_caps_lock": false
   schema_list:
     - {schema: xf}
   switcher:
-    caption: 〔方案選單〕
-    hotkeys:
-      - Control+grave
-      - Control+Shift+grave
-  ascii_composer/good_old_caps_lock: false
-  ascii_composer/switch_key:
-#    Caps_Lock: commit_code
-
-
-
+    caption: "〔方案選單〕"
+    hotkeys: ["Control+grave", "Control+Shift+grave"]

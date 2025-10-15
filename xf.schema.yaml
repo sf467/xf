@@ -17,9 +17,9 @@ schema:
     顶功类输入法，适合单字派。
     码表作者：化外愚民。
     输入法平台：中州韵输入法平台。
-  # dependencies:
-    # - pinyin_simp
-    # - stroke
+  dependencies:
+    - luna_pinyin
+    - stroke
     # - liangfen
     # - secret
 switches:
@@ -38,7 +38,7 @@ switches:
     states: [ 主题, 主题 ]
   - name: _key_Color_switch
     states: [ 配色, 配色 ]
-  - options: [zh_cn, zh_simp, zh_mars]
+  - options: [zh_simp2, zh_simp, zh_mars]
     reset: 0
     states: [ 汉字, 漢字, 漢牸 ]
   - options: [_key_undo]
@@ -79,6 +79,7 @@ engine:
     - history_translator@history
   filters:
     - simplifier@zh_simp
+    - simplifier@zh_simp2
     - simplifier@zh_mars
     - uniquifier
     - reverse_lookup_filter@pinyin_reverse_lookup
@@ -121,13 +122,22 @@ zh_simp:
   option_name: zh_simp
   tips: all
 
+zh_simp2:
+  opencc_config: t2s.json
+  option_name: zh_simp2
+  tips: none
+
 # 副翻译器
 pinyin_lookup:
   tag: pinyin_lookup
   enable_user_dict: false
-  dictionary: 码表/pinyin_simp
+  dictionary: luna_pinyin
   prefix: "e"             #
   tips: "〔拼音〕"
+  zh_simp:
+    opencc_config: s2t.json
+    option_name: zh_simp
+    tips: all
 
 
 liangfen_lookup:
@@ -140,7 +150,7 @@ liangfen_lookup:
 bihua_lookup:
   tag: bihua_lookup
   enable_user_dict: false
-  dictionary: 码表/stroke
+  dictionary: stroke
   prefix: "a"
   tips: "〔笔画〕"
   
@@ -148,6 +158,7 @@ pinyin_reverse_lookup:
   tags: [ pinyin_lookup ]
   overwrite_comment: true
   dictionary: xf
+# 明月拼音作反查时只能匹配繁体字，所以需要一份繁体码表。仅作表示对应关系，不代表编码规则
   comment_format:
     - "xform/$/〕/"
     - "xform/^/〔/"
