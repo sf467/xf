@@ -25,7 +25,7 @@ switches:
   - name: _hide_key_hint
     reset: 0
   - name: ascii_mode
-    reset: 0
+    reset: 1
     states: [ 中文, 英文 ]
   - name: _key_LANGUAGE_SWITCH
     states: [ 输入法, 输入法 ]

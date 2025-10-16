@@ -5,6 +5,5 @@ customization:
   modified_time: "Wed Oct 15 11:06:26 2025"
   rime_version: 1.14.0
 patch:
-  "ascii_composer/good_old_caps_lock": false # 设置为 false 可以使用大写锁定来切换中英文输入。
   schema_list:
     - {schema: xf}
