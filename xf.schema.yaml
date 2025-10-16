@@ -12,11 +12,6 @@ schema:
     - 光阴冢
     - 翱翔无限
     - 魔法帽
-
-  description: |
-    顶功类输入法，适合单字派。
-    码表作者：化外愚民。
-    输入法平台：中州韵输入法平台。
   dependencies:
     - luna_pinyin
     - stroke
