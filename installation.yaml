@@ -1,7 +1,6 @@
-distribution_code_name: trime
-distribution_name: Trime
-distribution_version: "nightly-3-g118b1e44"
-install_time: "Tue Jan 22 08:10:48 2019"
-installation_id: "fc412f6f-9654-4498-8ad2-1a2f3645d70a"
-rime_version: 1.14.0
-update_time: "Sun Oct 19 01:19:13 2025"
+distribution_code_name: "fcitx-rime"
+distribution_name: Rime
+distribution_version: 5.1.11
+install_time: "Sun Oct 19 12:40:15 2025"
+installation_id: "270abdda-7f1e-4d43-b284-91524717ab81"
+rime_version: 1.12.0
