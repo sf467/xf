@@ -523,7 +523,6 @@ liquid_keyboard:
       - space1
       - BackSpace
       - Return2
-      - liquid_keyboard_clipboard
       - liquid_keyboard_tabs
   keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, symbollist, list, ids, symbol, tabs, pinyin, script_symbols, jp, grease, rusa, korea, lation, yinbiao, unit, yanwenzi, combing, emoji_full, candidate]  #tab列表
   tabs:
