@@ -12,3 +12,12 @@ patch:
     hotkeys:
       - Control+grave
 
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Shift_L: noop
+      Shift_R: noop
+      Control_L: noop
+      Control_R: noop
+      Caps_Lock: noop
+      Eisu_toggle: noop
