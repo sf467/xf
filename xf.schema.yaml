@@ -27,9 +27,9 @@ switches:
   - name: ascii_mode
     reset: 1
     states: [ 中文, 英文 ]
-  - options: [xf, zh_simp2, zh_simp, zh_mars]
+  - options: [xf,  zh_simp, zh_mars]
     reset: 0
-    states: [ 一般, 简体, 繁體, 焱暒妏]
+    states: [ 简体, 繁體, 焱暒妏]
 engine:
   processors:
     - lua_processor@uppercase_processor
@@ -62,13 +62,11 @@ engine:
     - history_translator@history
   filters:
     - simplifier@zh_simp
-    - simplifier@zh_simp2
     - simplifier@zh_mars
     - uniquifier
     - reverse_lookup_filter@pinyin_reverse_lookup
     - reverse_lookup_filter@liangfen_reverse_lookup
     - reverse_lookup_filter@bihua_reverse_lookup
-
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba0,./;'^*!?><$=]
   initials: "qwertyuiopasdfghjklzxcvbnm="
@@ -105,11 +103,6 @@ zh_simp:
   option_name: zh_simp
   tips: all
 
-zh_simp2:
-  opencc_config: t2s.json
-  option_name: zh_simp2
-  tips: none
-
 # 副翻译器
 pinyin_lookup:
   tag: pinyin_lookup
@@ -117,10 +110,6 @@ pinyin_lookup:
   dictionary: luna_pinyin
   prefix: "e"             #
   tips: "〔拼音〕"
-  zh_simp:
-    opencc_config: s2t.json
-    option_name: zh_simp
-    tips: all
 
 
 liangfen_lookup:
@@ -141,7 +130,6 @@ pinyin_reverse_lookup:
   tags: [ pinyin_lookup ]
   overwrite_comment: true
   dictionary: xf
-# 明月拼音作反查时只能匹配繁体字，所以需要一份繁体码表。仅作表示对应关系，不代表编码规则
   comment_format:
     - "xform/$/〕/"
     - "xform/^/〔/"
