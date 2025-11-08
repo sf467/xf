@@ -240,7 +240,7 @@ preset_keys:
   Mode_switch: {send: Mode_switch, states: ["中文", "西文"], toggle: ascii_mode}
   Theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
   Color_switch: {label: 配色, functional: false, send: PROG_RED}
-  IME_switch: {label: 键盘, send: LANGUAGE_SWITCH}
+  IME_switch: {label: 键盘, send: LANGUAGE_SWITCH, select: .next}
 
 
   # 液体键盘要用到的
