@@ -32,7 +32,6 @@ switches:
     states: [ 简体, 繁體, 焱暒妏]
 engine:
   processors:
-    - lua_processor@uppercase_processor
     - ascii_composer
     - recognizer
     - key_binder
@@ -53,9 +52,8 @@ engine:
   translators:
     - punct_translator
     - table_translator
-    - lua_translator@recent_input
-    - lua_translator@datetime_translator
-    - lua_translator@number_translator
+    - lua_translator@*datetime
+    - lua_translator@*xnumber
     - script_translator@pinyin_lookup #使编码可以翻译成相应的字
     - table_translator@liangfen_lookup
     - table_translator@bihua_lookup
