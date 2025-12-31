@@ -63,6 +63,7 @@ translator:
     - xform/~//
 #   - xlit/hspnz/㇐㇑㇒㇏㇠/   # 中日韓筆畫（橫豎撇捺折）
     - xlit/hspnz/⼀⼁⼃⼂⼄/   # 康熙部首（橫豎撇點折）
+  enable_user_dict: false
 
 abc_segmentor:
   extra_tags:
