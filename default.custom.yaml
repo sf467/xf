@@ -7,6 +7,7 @@ customization:
 patch:
   schema_list:
     - {schema: xf}
+    - {schema: stroke}
   switcher:
     caption: 〔方案選單〕
     hotkeys:

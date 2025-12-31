@@ -15,8 +15,6 @@ schema:
   dependencies:
     - luna_pinyin
     - stroke
-    # - liangfen
-    # - secret
 switches:
   - name: _hide_candidate
     reset: 0
@@ -45,7 +43,6 @@ engine:
     - matcher
     - abc_segmentor
     - affix_segmentor@pinyin_lookup # 用户自定义@tag
-    - affix_segmentor@liangfen_lookup
     - affix_segmentor@bihua_lookup
     - punct_segmentor
     - fallback_segmentor
@@ -55,7 +52,6 @@ engine:
     - lua_translator@*datetime
     - lua_translator@*xnumber
     - script_translator@pinyin_lookup #使编码可以翻译成相应的字
-    - table_translator@liangfen_lookup
     - table_translator@bihua_lookup
     - history_translator@history
   filters:
@@ -63,7 +59,6 @@ engine:
     - simplifier@zh_mars
     - uniquifier
     - reverse_lookup_filter@pinyin_reverse_lookup
-    - reverse_lookup_filter@liangfen_reverse_lookup
     - reverse_lookup_filter@bihua_reverse_lookup
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba0,./;'^*!?><$=]
@@ -109,20 +104,13 @@ pinyin_lookup:
   prefix: "e"             #
   tips: "〔拼音〕"
 
-
-liangfen_lookup:
-  tag: liangfen_lookup
-  enable_user_dict: false
-  dictionary: 码表/liangfen
-  prefix: "i"
-  tips: "〔两分〕"
-
 bihua_lookup:
   tag: bihua_lookup
   enable_user_dict: false
   dictionary: stroke
   prefix: "a"
   tips: "〔笔画〕"
+  preedit_format:
   
 pinyin_reverse_lookup:
   tags: [ pinyin_lookup ]
@@ -134,15 +122,6 @@ pinyin_reverse_lookup:
     - "xform/ /, /"
 
 
-liangfen_reverse_lookup:
-  tags: [ liangfen_lookup ]
-  dictionary: xf
-  enable_completion: true
-  comment_format:
-    - "xform/$/〕/"
-    - "xform/^/〔/"
-    - "xform/ /, /"
-
 
 bihua_reverse_lookup:
   tags: [ bihua_lookup ]
@@ -153,12 +132,10 @@ bihua_reverse_lookup:
     - "xform/^/〔/"
     - "xform/ /, /"
 
-
 recognizer:
   patterns:
     pinyin_lookup: "^e[a-z]*'?$"
     bihua_lookup: "^a[a-z]*'?$"
-    liangfen_lookup: "^i[a-z]*'?$"
     punct: "^/([0-9]0?|[a-z]+)$"
 #    retention: "^[bcdfghjklmnpqrstuvwxyz][a-z;][aeio;]{0,3}$"   #防三码及以上单字和所有词组自动上屏
 
