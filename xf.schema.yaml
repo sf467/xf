@@ -110,8 +110,9 @@ bihua_lookup:
   dictionary: stroke
   prefix: "a"
   tips: "〔笔画〕"
-  preedit_format:
-  
+  comment_format:
+    - xlit/hspnz/eiuoa
+
 pinyin_reverse_lookup:
   tags: [ pinyin_lookup ]
   overwrite_comment: true
