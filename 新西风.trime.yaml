@@ -203,8 +203,8 @@ preset_keys:
   Return2: {label: 回车, send: Return, functional: false }
   Hide: {label: 隐藏, send: BACK}
   BackSpace: {label: 退格, preview: '⇦', repeatable: true, functional: false, send: BackSpace}
-  space: {repeatable: false, preview: ' ', functional: true, label: '_______', send: space}  
-  space1: {repeatable: false, label: '空格', functional: false, send: space}
+  space: {slide_cursor: true, repeatable: false, preview: ' ', functional: true, label: '_______', send: space}  
+  space1: {slide_cursor: true, repeatable: false, label: '空格', functional: false, send: space}
   Clear: {label: 全清, send: Clear}
   Escape: {label: 取消, functional: false, send: Escape}  
   Home: {label: 行首, send: Home, functional: false}
@@ -374,7 +374,7 @@ preset_keyboards:
 
 
       - { click: Keyboard_number, long_click: Keyboard_mermaid, functional: false, width: 14.28}
-      - { click: space, long_click: Mode_switch, swipe_left: Left, swipe_right: Right, label: '西风瘦码', width: 57.14}  
+      - { click: space, long_click: Mode_switch, label: '西风瘦码', width: 57.14}  
       - { click: BackSpace, width: 14.28}
       - { click: Return2, width: 14.28}
 
