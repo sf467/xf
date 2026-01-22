@@ -1,24 +1,15 @@
 customization:
   distribution_code_name: trime
-  distribution_version: "nightly-3-gbda9e35a"
+  distribution_version: "v3.3.8-29-g44ff55b9"
   generator: "Rime::SwitcherSettings"
-  modified_time: "Wed Oct 15 11:06:26 2025"
-  rime_version: 1.14.0
+  modified_time: "Thu Jan 22 12:51:24 2026"
+  rime_version: 1.16.0
 patch:
-  schema_list:
-    - {schema: xf}
-    - {schema: stroke}
-  switcher:
-    caption: 〔方案選單〕
-    hotkeys:
-      - Control+grave
-
   ascii_composer:
     good_old_caps_lock: true
-    switch_key:
-      Shift_L: noop
-      Shift_R: noop
-      Control_L: noop
-      Control_R: noop
-      Caps_Lock: noop
-      Eisu_toggle: noop
+    switch_key: {Caps_Lock: noop, Control_L: noop, Control_R: noop, Eisu_toggle: noop, Shift_L: noop, Shift_R: noop}
+  schema_list:
+    - {schema: xf}
+  switcher:
+    caption: "〔方案選單〕"
+    hotkeys: ["Control+grave"]
