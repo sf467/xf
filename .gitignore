@@ -1,5 +1,6 @@
-build/
-sync/
+build
+sync
 user.yaml
 installation.yaml
+.stignore
 .stfolder
