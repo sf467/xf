@@ -340,15 +340,15 @@ preset_keyboards:
       - { click: e, swipe_up: E, long_click: "#", swipe_down: 3, hint: 3}
       - { click: r, swipe_up: R, long_click: "$", swipe_down: 4, hint: 4}
       - { click: t, swipe_up: T, long_click: "%" , swipe_down: 5, hint: 5}
-      - { click: n, swipe_up: N, long_click: "-"}
-      - { click: m, swipe_up: M, long_click: "_"}
+      - { click: o, swipe_up: O, long_click: "-"}
+      - { click: p, swipe_up: P, long_click: "_"}
    
       - { click: s, swipe_up: S, long_click: "~"}     
       - { click: y, swipe_up: Y, long_click: "^", swipe_down: 6, hint: 6}
       - { click: u, swipe_up: U, long_click: "&", swipe_down: 7, hint: 7}
       - { click: i, swipe_up: I, long_click: "*", swipe_down: 8, hint: 8}
-      - { click: o, swipe_up: O, long_click: "(", swipe_down: 9, hint: 9}
-      - { click: p, swipe_up: P, long_click: ")", swipe_down: 0, hint: 0}
+      - { click: h, swipe_up: H, long_click: "(", swipe_down: 9, hint: 9}
+      - { click: j, swipe_up: J, long_click: ")", swipe_down: 0, hint: 0}
       - { click: k, swipe_up: K, long_click: "["}
       - { click: l, swipe_up: L, long_click: "]"}
  
@@ -356,8 +356,8 @@ preset_keyboards:
       - { click: d, swipe_up: D, long_click: "\\"}
       - { click: f, swipe_up: F, long_click: "|"}
       - { click: g, swipe_up: G, long_click: "liquid_keyboard_symbollist"}
-      - { click: h, swipe_up: H, long_click: "{"}
-      - { click: j, swipe_up: J, long_click: "}"}  
+      - { click: n, swipe_up: N, long_click: "{"}
+      - { click: m, swipe_up: M, long_click: "}"}  
       - { click: ";", swipe_up: undo, long_click: ":"}
       - { click: "'", swipe_up: redo, long_click: '"'}
     
