@@ -72,6 +72,7 @@ style:
   key_width: 14.28 #键宽，占屏幕宽的百分比
   keyboards: [default, number, numberb]
   keyboard_height: 200 
+  keyboard_padding_bottom: 5
   label_text_size: 12 #标签字号ddv
   label_font: label.ttf #编标签字体
   latin_font: latin.ttf #西文本体
