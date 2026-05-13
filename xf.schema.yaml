@@ -51,6 +51,7 @@ engine:
     - table_translator
     - lua_translator@*datetime
     - lua_translator@*xnumber
+    - lua_translator@*emoji
     - script_translator@pinyin_lookup #使编码可以翻译成相应的字
     - table_translator@bihua_lookup
     - history_translator@history
@@ -138,6 +139,7 @@ recognizer:
     pinyin_lookup: "^e[a-z]*'?$"
     bihua_lookup: "^a[a-z]*'?$"
     punct: "^/([0-9]0?|[a-z]+)$"
+    emoji: "^oo[a-z][A-Z]*'?$"
 #    retention: "^[bcdfghjklmnpqrstuvwxyz][a-z;][aeio;]{0,3}$"   #防三码及以上单字和所有词组自动上屏
 
 
