@@ -163,17 +163,7 @@ end
 
 local function translator(input, seg, env)
 if string.sub(input, 1, 3) == "osz" then
-	-- 新增键盘映射处理 --
 	local input2 = string.sub(input, 4)
-	input2 = input2:gsub("[qwertyuiop]", function(c)
-	local keymap = {
-		q = "1", w = "2", e = "3", r = "4", t = "5",
-		y = "6", u = "7", i = "8", o = "9", p = "0"
-	}
-	return keymap[c] or c
-	end)
-
-	-- 后续保持原有逻辑不变 --
 	if string.match(input2, "^[%+%-]?%d*%.?%d*$") then
 		yield(Candidate("number", seg.start, seg._end, speakMoney(input2), " 金额"))
 		yield(Candidate("number", seg.start, seg._end, speakOfficially(input2), " 文读"))

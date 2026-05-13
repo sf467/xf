@@ -124,7 +124,6 @@ pinyin_reverse_lookup:
     - "xform/ /, /"
 
 
-
 bihua_reverse_lookup:
   tags: [ bihua_lookup ]
   dictionary: xf
@@ -139,7 +138,7 @@ recognizer:
     pinyin_lookup: "^e[a-z]*'?$"
     bihua_lookup: "^a[a-z]*'?$"
     punct: "^/([0-9]0?|[a-z]+)$"
-#    retention: "^[bcdfghjklmnpqrstuvwxyz][a-z;][aeio;]{0,3}$"   #防三码及以上单字和所有词组自动上屏
+    xnumber: "^osz[0-9]*$"
 
 
 key_binder:
