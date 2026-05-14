@@ -83,26 +83,13 @@ end
 
 local function emoji_translator(input, seg)
 
-    --------------------------------------------------
-    -- 必须 oo 开头
-    --------------------------------------------------
-
-    if not input:match("^oo") then
+    if not seg:has_tag("emoji") then
         return
     end
 
-    --------------------------------------------------
-    -- 去掉 oo
-    --------------------------------------------------
-
-    local query = input:sub(3)
-
-    if query == "" then
-        return
-    end
 
     local keywords =
-        split_keywords(query)
+        split_keywords(input)
 
     local candidates = {}
 

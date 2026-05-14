@@ -44,6 +44,8 @@ engine:
     - abc_segmentor
     - affix_segmentor@pinyin_lookup # 用户自定义@tag
     - affix_segmentor@bihua_lookup
+    - affix_segmentor@emoji
+    - affix_segmentor@xnumber
     - punct_segmentor
     - fallback_segmentor
   translators:
@@ -52,7 +54,7 @@ engine:
     - lua_translator@*datetime
     - lua_translator@*xnumber
     - lua_translator@*emoji
-    - script_translator@pinyin_lookup #使编码可以翻译成相应的字
+    - script_translator@pinyin_lookup
     - table_translator@bihua_lookup
     - history_translator@history
   filters:
@@ -86,18 +88,18 @@ translator:
   max_phrase_length: 5
 
 
+# 滤镜
 zh_mars:
   opencc_config: martian.json
   option_name: zh_mars
   tips: all
 
-# 滤镜
 zh_simp:
   opencc_config: s2t.json
   option_name: zh_simp
   tips: all
 
-# 副翻译器
+# 副翻译器兼分段器
 pinyin_lookup:
   tag: pinyin_lookup
   enable_user_dict: false
@@ -114,6 +116,17 @@ bihua_lookup:
   comment_format:
     - xlit/hspnz/eiuoa
 
+#分段器
+emoji:
+  tag: emoji
+  prefix: "oo"
+  tips: "〔emoji〕"
+xnumber:
+  tag: xnumber
+  prefix: "osz"
+  tips: "〔xnumber〕"
+
+# 滤镜
 pinyin_reverse_lookup:
   tags: [ pinyin_lookup ]
   overwrite_comment: true
@@ -139,6 +152,7 @@ recognizer:
     bihua_lookup: "^a[a-z]*'?$"
     punct: "^/([0-9]0?|[a-z]+)$"
     xnumber: "^osz[0-9]*$"
+    emoji: "^oo[a-z]*'?$"
 
 
 key_binder:

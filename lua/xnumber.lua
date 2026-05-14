@@ -160,23 +160,23 @@ local function baseConverse(str, from, to)
 	return strout
 end
 
-
 local function translator(input, seg, env)
-if string.sub(input, 1, 3) == "osz" then
-	local input2 = string.sub(input, 4)
-	if string.match(input2, "^[%+%-]?%d*%.?%d*$") then
-		yield(Candidate("number", seg.start, seg._end, speakMoney(input2), " 金额"))
-		yield(Candidate("number", seg.start, seg._end, speakOfficially(input2), " 文读"))
-		yield(Candidate("number", seg.start, seg._end, speakLiterally(input2), " 冷读"))
-		yield(Candidate("number", seg.start, seg._end, speakMillitary(input2), " 军语"))
+	-- env can be used for getting the state of a switch, e.g., `env.engine.context:get_option("jffh")` returns true/false (or nil if the switch does not exist)
+	if seg:has_tag("xnumber") then
+		if string.match(input, "^[%+%-]?%d*%.?%d*$") then -- sadly, lua does not support regex like {0,4}
+			-- comment or reorder following lines to adjust the effects
+			yield(Candidate("number", seg.start, seg._end, speakMoney(input), " 金额"))
+			yield(Candidate("number", seg.start, seg._end, speakOfficially(input), " 文读"))
+			yield(Candidate("number", seg.start, seg._end, speakLiterally(input), " 冷读"))
+			yield(Candidate("number", seg.start, seg._end, speakMillitary(input), " 军语"))
 		else
-			local ok, ret = pcall(load, "return "..input2)
+			local ok, ret = pcall(load, "return "..input) -- from Lua 5.3, the `loadstring` function is replaced by `load`
 			if ok then yield(Candidate("number", seg.start, seg._end, tostring(ret()), " 计算")) end
-				end
-				if string.match(input2, "^[%+%-]?%d*$") then
-					yield(Candidate("number", seg.start, seg._end, baseConverse(input2, 10, 16), " 进制"))
-					end
-					end
-					end
+		end
+		if string.match(input, "^[%+%-]?%d*$") then -- plz, i dont want to deal with base conversion with decimals
+			yield(Candidate("number", seg.start, seg._end, baseConverse(input, 10, 16), " 进制"))
+		end
+	end
+end
 
-					return translator
+return translator
