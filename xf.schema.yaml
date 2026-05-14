@@ -56,7 +56,6 @@ engine:
     - lua_translator@*emoji
     - script_translator@pinyin_lookup
     - table_translator@bihua_lookup
-    - history_translator@history
   filters:
     - simplifier@zh_simp
     - simplifier@zh_mars
@@ -84,7 +83,7 @@ translator:
   enable_encoder: true
   enable_sentence: false
   enable_user_dict: false
-  encode_commit_history: true
+  encode_commit_history: false
   max_phrase_length: 5
 
 
