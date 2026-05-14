@@ -1,9 +1,3 @@
-customization:
-  distribution_code_name: trime
-  distribution_version: "v3.3.8-29-g44ff55b9"
-  generator: "Rime::SwitcherSettings"
-  modified_time: "Thu Jan 22 12:51:24 2026"
-  rime_version: 1.16.0
 patch:
   ascii_composer:
     good_old_caps_lock: true
