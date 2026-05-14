@@ -153,6 +153,7 @@ recognizer:
     punct: "^/([0-9]0?|[a-z]+)$"
     xnumber: "^osz[0-9]*$"
     emoji: "^oo[a-z]*'?$"
+    datetime: "^osj$"
 
 
 key_binder:
@@ -160,8 +161,6 @@ key_binder:
     - { when: paging, accept: minus, send: Page_Up }
     - { when: has_menu, accept: equal, send: Page_Down }
     - { when: always, accept: Control+space, toggle: ascii_mode }
-#    - { when: has_menu, accept: space, send: $ }
-    #- { when: has_menu, accept: apostrophe, send: Control+1 }
 
 
 menu:
