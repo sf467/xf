@@ -28,6 +28,8 @@ switches:
   - options: [xf,  zh_simp, zh_mars]
     reset: 0
     states: [ 简体, 繁體, 焱暒妏]
+  - name: simp_luna
+    reset: 1
 engine:
   processors:
     - ascii_composer
@@ -42,7 +44,8 @@ engine:
     - ascii_segmentor
     - matcher
     - abc_segmentor
-    - affix_segmentor@pinyin_lookup # 用户自定义@tag
+    - affix_segmentor@pinyin_input
+    - affix_segmentor@pinyin_lookup
     - affix_segmentor@bihua_lookup
     - affix_segmentor@emoji
     - affix_segmentor@xnumber
@@ -54,13 +57,16 @@ engine:
     - lua_translator@*datetime
     - lua_translator@*xnumber
     - lua_translator@*emoji
-    - script_translator@pinyin_lookup
-    - table_translator@bihua_lookup
+    - script_translator@luna_pinyin
+    - table_translator@stroke
   filters:
     - simplifier@zh_simp
     - simplifier@zh_mars
-    - uniquifier
+#    - uniquifier  
     - reverse_lookup_filter@pinyin_reverse_lookup
+    - simplifier@luna_pinyin_simp
+    - lua_filter@*sort
+  
     - reverse_lookup_filter@bihua_reverse_lookup
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba0,./;'^*!?><$=]
@@ -87,35 +93,35 @@ translator:
   max_phrase_length: 5
 
 
-# 滤镜
-zh_mars:
-  opencc_config: martian.json
-  option_name: zh_mars
-  tips: all
+# 打标签
+recognizer:
+  patterns:
+    pinyin_input: "^u[a-z]*'?$"
+    pinyin_lookup: "^e[a-z]*'?$"
+    bihua_lookup: "^a[a-z]*'?$"
+    punct: "^/([0-9]0?|[a-z]+)$"
+    xnumber: "^on[0-9qwertyuiop]*$"
+    emoji: "^oo[a-z,]*$"
+    datetime: "^ot$"
 
-zh_simp:
-  opencc_config: s2t.json
-  option_name: zh_simp
-  tips: all
-
-# 副翻译器兼分段器
+# 分段器
+pinyin_input:
+  tag: pinyin_input
+  prefix: "u"
+  tips: "〔拼音简体〕"
 pinyin_lookup:
   tag: pinyin_lookup
-  enable_user_dict: false
-  dictionary: luna_pinyin
-  prefix: "e"             #
-  tips: "〔拼音〕"
+  prefix: "e"
+  suffix: ";"
+  tips: "〔拼音反查〕"
 
 bihua_lookup:
   tag: bihua_lookup
-  enable_user_dict: false
-  dictionary: stroke
   prefix: "a"
   tips: "〔笔画〕"
   comment_format:
     - xlit/hspnz/eiuoa
 
-#分段器
 emoji:
   tag: emoji
   prefix: "oo"
@@ -125,15 +131,22 @@ xnumber:
   prefix: "on"
   tips: "〔xnumber〕"
 
-# 打标签
-recognizer:
-  patterns:
-    pinyin_lookup: "^e[a-z]*'?$"
-    bihua_lookup: "^a[a-z]*'?$"
-    punct: "^/([0-9]0?|[a-z]+)$"
-    xnumber: "^on[0-9qwertyuiop]*$"
-    emoji: "^oo[a-z,]*$"
-    datetime: "^ot$"
+
+
+
+# 副翻译器
+luna_pinyin:
+  dictionary: luna_pinyin
+  enable_user_dict: false
+  tags: [pinyin_lookup, pinyin_input]
+
+stroke:
+  tag: bihua_lookup
+  enable_user_dict: false
+  dictionary: stroke
+  comment_format:
+    - xlit/hspnz/eiuoa
+
 
 # 滤镜
 pinyin_reverse_lookup:
@@ -154,6 +167,22 @@ bihua_reverse_lookup:
     - "xform/$/〕/"
     - "xform/^/〔/"
     - "xform/ /, /"
+
+zh_mars:
+  opencc_config: martian.json
+  option_name: zh_mars
+  tips: all
+
+zh_simp:
+  opencc_config: s2t.json
+  option_name: zh_simp
+  tips: all
+
+luna_pinyin_simp:
+  option_name: simp_luna
+  opencc_config: t2s.json
+  tags: [ pinyin_input ]
+  tip: char
 
 key_binder:
   bindings:
