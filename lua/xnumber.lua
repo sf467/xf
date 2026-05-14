@@ -164,7 +164,23 @@ local function translator(input, seg, env)
 	-- env can be used for getting the state of a switch, e.g., `env.engine.context:get_option("jffh")` returns true/false (or nil if the switch does not exist)
 	if not seg:has_tag("xnumber") then
 		return
+
 	end
+	local map = {
+		q = "1",
+		w = "2",
+		e = "3",
+		r = "4",
+		t = "5",
+		y = "6",
+		u = "7",
+		i = "8",
+		o = "9",
+		p = "0",
+	}
+	input = input:gsub("[qwertyuiop]", map)
+
+
 	if string.match(input, "^[%+%-]?%d*%.?%d*$") then -- sadly, lua does not support regex like {0,4}
 		-- comment or reorder following lines to adjust the effects
 		yield(Candidate("number", seg.start, seg._end, speakMoney(input), " 金额"))
