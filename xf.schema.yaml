@@ -62,11 +62,9 @@ engine:
   filters:
     - simplifier@zh_simp
     - simplifier@zh_mars
-#    - uniquifier  
-    - reverse_lookup_filter@pinyin_reverse_lookup
     - simplifier@luna_pinyin_simp
-    - lua_filter@*sort
-  
+    - uniquifier  
+    - reverse_lookup_filter@pinyin_reverse_lookup
     - reverse_lookup_filter@bihua_reverse_lookup
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba0,./;'^*!?><$=]
@@ -96,7 +94,6 @@ translator:
 # 打标签
 recognizer:
   patterns:
-    pinyin_input: "^u[a-z]*'?$"
     pinyin_lookup: "^e[a-z]*'?$"
     bihua_lookup: "^a[a-z]*'?$"
     punct: "^/([0-9]0?|[a-z]+)$"
@@ -105,16 +102,10 @@ recognizer:
     datetime: "^ot$"
 
 # 分段器
-pinyin_input:
-  tag: pinyin_input
-  prefix: "u"
-  tips: "〔拼音简体〕"
 pinyin_lookup:
   tag: pinyin_lookup
   prefix: "e"
-  suffix: ";"
   tips: "〔拼音反查〕"
-
 bihua_lookup:
   tag: bihua_lookup
   prefix: "a"
@@ -138,7 +129,7 @@ xnumber:
 luna_pinyin:
   dictionary: luna_pinyin
   enable_user_dict: false
-  tags: [pinyin_lookup, pinyin_input]
+  tags: [pinyin_lookup]
 
 stroke:
   tag: bihua_lookup
@@ -152,7 +143,7 @@ stroke:
 pinyin_reverse_lookup:
   tags: [ pinyin_lookup ]
   overwrite_comment: true
-  dictionary: xf
+  dictionary: xft
   comment_format:
     - "xform/$/〕/"
     - "xform/^/〔/"
@@ -181,9 +172,10 @@ zh_simp:
 luna_pinyin_simp:
   option_name: simp_luna
   opencc_config: t2s.json
-  tags: [ pinyin_input ]
-  tip: char
-
+  tags: [ pinyin_lookup ]
+  tips: none
+  allow_erase_comment: true
+  comment_format:
 key_binder:
   bindings:
     - { when: paging, accept: minus, send: Page_Up }
@@ -191,7 +183,7 @@ key_binder:
     - { when: always, accept: Control+space, toggle: ascii_mode }
 
 menu:
-  page_size: 5
+  page_size: 8
 
 punctuator:
   import_preset: symbols
