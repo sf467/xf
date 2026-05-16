@@ -1,0 +1,47 @@
+# Rime schema settings
+# encoding: utf-8
+# `引导拼音反查
+
+schema:
+  schema_id: fake_xf
+  name: fake_xf
+  version: "20260514"
+  description: 伪方案，仅用于生成西风瘦码繁体字的码表，用于在部署的时候自动生成可以用于明月拼音反查的二进制文件
+  author:
+    - 魔法帽
+switches:
+engine:
+  processors:
+  segmentors:
+  translators:
+  filters:
+speller:
+  finals: "'"
+# 主翻译器
+translator:
+  dictionary: xft
+  enable_charset_filter: false
+  enable_completion: true
+  enable_encoder: true
+  enable_sentence: false
+  enable_user_dict: false
+  encode_commit_history: false
+  max_phrase_length: 5
+
+
+# 打标签
+recognizer:
+  patterns:
+
+# 分段器
+key_binder:
+  bindings:
+    - { when: paging, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    - { when: always, accept: Control+space, toggle: ascii_mode }
+
+menu:
+  page_size: 8
+
+punctuator:
+  import_preset: symbols

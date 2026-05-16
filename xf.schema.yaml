@@ -15,6 +15,7 @@ schema:
   dependencies:
     - luna_pinyin
     - stroke
+    - fake_xf
 switches:
   - name: _hide_candidate
     reset: 0
@@ -123,8 +124,6 @@ xnumber:
   tips: "〔xnumber〕"
 
 
-
-
 # 副翻译器
 luna_pinyin:
   dictionary: luna_pinyin
@@ -137,7 +136,6 @@ stroke:
   dictionary: stroke
   comment_format:
     - xlit/hspnz/eiuoa
-
 
 # 滤镜
 pinyin_reverse_lookup:
