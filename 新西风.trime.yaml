@@ -42,9 +42,9 @@ style:
   layout:
     position: fixed #候选窗口位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要Android5.0以上)
     min_length: 10 #候选窗口最小词长
-    max_length: 14 #超过字数则换行
+    max_length: 24 #超过字数则换行
     sticky_lines: 1 #固顶行数
-    max_entries: 5 #候选窗口最大词条数
+    max_entries: 8 #候选窗口最大词条数
     border: 0 #候选窗口边框宽度
     max_width: 360 #最大宽度，超过则自动换行
     max_height: 300 #最大高度
@@ -72,7 +72,7 @@ style:
   key_width: 14.28 #键宽，占屏幕宽的百分比
   keyboards: [default, number, numberb]
   keyboard_height: 200 
-  keyboard_padding_bottom: 5
+  keyboard_padding_bottom: 8
   label_text_size: 12 #标签字号ddv
   label_font: label.ttf #编标签字体
   latin_font: latin.ttf #西文本体
