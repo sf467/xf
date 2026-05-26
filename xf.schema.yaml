@@ -181,7 +181,7 @@ key_binder:
     - { when: always, accept: Control+space, toggle: ascii_mode }
 
 menu:
-  page_size: 8
+  page_size: 5
 
 punctuator:
   import_preset: symbols
