@@ -196,9 +196,9 @@ preset_keys:
   #   send: Eisu_toggle #执行切换键盘命令
   #   select: numberb #选择numberb键盘
   #   functional: false
-
   # 编辑
-  Shift_L: {label: 上档, preview: '⇪', send: Shift_L}
+  Shift_L1: {label: 上档, preview: '⇪', send: Shift_L}
+  Shift_L2: {label: 上档, preview: '⇪', send: Shift_L, shift_lock: click}
   Return: { label: enter_labels, preview: '↩', functional: false, send: Return }
   Return1: {label: Enter, preview: '↩', functional: false, send: Return}
   Return2: {label: 回车, send: Return, functional: false }
@@ -236,9 +236,7 @@ preset_keys:
   Left1: {label: '⇦', send: Control+Left, repeatable: true, functional: false}
   Right1: {label: '⇨', send: Control+Right, repeatable: true, functional: false}
   Shift_L2: {label: 选择, preview: '⇪', functional: false, send: Shift_L}
-
-
-  Mode_switch: {send: Mode_switch, states: ["中文", "西文"], toggle: ascii_mode}
+  Mode_switch: {send: SWITCH_CHARSET, states: ["中文", "西文"], toggle: ascii_mode}
   Theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
   Color_switch: {label: 配色, functional: false, send: PROG_RED}
   IME_switch: {label: 键盘, send: LANGUAGE_SWITCH, select: .next}
@@ -324,7 +322,6 @@ tool_bar:
   # 右侧按钮列表（从右向左排列）
   buttons: [ *hide_button, *emoji_button, *clipboard_button,  *redo_button,  *undo_button, *ascii_mode_button,*switch_button ]
 
-
 preset_keyboards:
   default:
     name: 西风瘦码中文
@@ -361,9 +358,8 @@ preset_keyboards:
       - { click: m, swipe_up: M, long_click: "}"}  
       - { click: ";", swipe_up: undo, long_click: ":"}
       - { click: "'", swipe_up: redo, long_click: '"'}
-    
-    
-      - { click: Shift_L}
+
+      - { click: Shift_L1, long_click: Shift_L2}
       - { click: x, swipe_up: X, long_click: cut}
       - { click: c, swipe_up: C, long_click: copy}
       - { click: v, swipe_up: V, long_click: paste}
