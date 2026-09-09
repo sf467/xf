@@ -5,15 +5,6 @@ config_version: "3.0"
 name: 新西风         #方案名称
 author: 魔法帽        #作者信息
 
-#键盘高度
-height:
-  1: &jpgd1 30 #表情键盘
-  2: &jpgd2 24 #颜文字键盘1
-  3: &jpgd3 24 #颜文字键盘2
-  4: &jpgd4 48 #主键盘
-  5: &jpgd5 39.5 #符号键盘
-  6: &hgap 4 #键盘横缝大小
-  7: &sgap 8 #键盘竖缝大小
 
 #键盘高度
 round_corner:
@@ -38,7 +29,7 @@ style:
   comment_text_size: 14 #编码提示字号
   hanb_font: hanb.ttf #扩充字体
   horizontal: true #水平模式
-  horizontal_gap: *hgap #键水平间距
+  horizontal_gap: 0 #键水平间距
   layout:
     position: fixed #候选窗口位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要Android5.0以上)
     min_length: 10 #候选窗口最小词长
@@ -55,7 +46,7 @@ style:
     line_spacing: 0 #候选词的行间距(px)
     line_spacing_multiplier: 1.2 #候选词的行间距(倍数)
     spacing: 1 #与预编辑或边缘的距离
-    round_corner: *round2 #候选窗口圆角
+    round_corner: 12 #候选窗口圆角
     alpha: 0xff #透明度(0-255)
     elevation: 0 #阴影(>=Android5.0)
     background: background.png #颜色或者backgrounds目录下的图片文档名
@@ -71,8 +62,8 @@ style:
   key_text_size: 24 #键字号
   key_width: 14.28 #键宽，占屏幕宽的百分比
   keyboards: [default, number, numberb]
-  keyboard_height: 200 
-  keyboard_padding_bottom: 8
+  keyboard_height: 220
+  keyboard_padding_bottom: 0
   label_text_size: 12 #标签字号ddv
   label_font: label.ttf #编标签字体
   latin_font: latin.ttf #西文本体
@@ -84,7 +75,7 @@ style:
   preview_text_size: 40 #按键提示字号
   proximity_correction: true #按键纠错
   reset_ascii_mode: false #显示键盘时重置为中文状态
-  round_corner: *round1 #按键圆角半径
+  round_corner: 0 #按键圆角半径
   shadow_radius: 0.0 #按键阴影半径
   speech_opencc_config: none #语音输入简繁转换
   symbol_font: symbol.ttf #符号字体
@@ -93,7 +84,7 @@ style:
   #text_height: 32 #编码区高度
   text_size: 16 #编码区字号
   vertical_correction: -5
-  vertical_gap: *sgap #键盘行距
+  vertical_gap: 0 #键盘行距
 
 fallback_colors:
   candidate_text_color: text_color

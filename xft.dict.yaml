@@ -1,4 +1,4 @@
-﻿# Rime dictionary: xfdz單字
+# Rime dictionary: xfdz單字
 #去除形碼後，筆劃碼按筆順取碼
 # encoding: utf-8
 
@@ -3378,6 +3378,10 @@ columns:
 捉	zfi
 撞	zfo
 抓	zfu
+<<<<<<< HEAD
+=======
+臧	zga
+>>>>>>> b527c83 (1)
 莊	zge
 戰	zgi
 災	zgo
