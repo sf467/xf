@@ -17,12 +17,6 @@ schema:
     - stroke
     - fake_xf
 switches:
-  - name: _hide_candidate
-    reset: 0
-  - name: _hide_comment
-    reset: 0
-  - name: _hide_key_hint
-    reset: 0
   - name: ascii_mode
     reset: 1
     states: [ 中文, 英文 ]
