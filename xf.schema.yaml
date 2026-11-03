@@ -26,7 +26,7 @@ switches:
   - name: ascii_mode
     reset: 1
     states: [ 中文, 英文 ]
-  - options: [xf,  zh_simp, zh_mars]
+  - options: [xf,  zh_trad, zh_mars]
     reset: 0
     states: [ 简体, 繁體, 焱暒妏]
   - name: simp_luna
@@ -60,12 +60,12 @@ engine:
     - script_translator@luna_pinyin
     - table_translator@stroke
   filters:
-    - simplifier@zh_simp
+    - simplifier@zh_trad
     - simplifier@zh_mars
     - simplifier@luna_pinyin_simp
-    - uniquifier  
     - reverse_lookup_filter@pinyin_reverse_lookup
     - reverse_lookup_filter@bihua_reverse_lookup
+    - uniquifier  
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba0,./;'^*!?><$=]
   initials: "qwertyuiopasdfghjklzxcvbnm="
@@ -160,9 +160,9 @@ zh_mars:
   option_name: zh_mars
   tips: all
 
-zh_simp:
+zh_trad:
   opencc_config: s2t.json
-  option_name: zh_simp
+  option_name: zh_trad
   tips: all
 
 # 将明月拼音输出的繁体字转换为简体，包括反查到的繁体词库里的字。
