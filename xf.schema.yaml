@@ -5,7 +5,7 @@
 schema:
   schema_id: xf
   name: 西风瘦码
-  version: "20260514"
+  version: "20261103"
   author:
     - 戴石麟
     - 化外愚民
@@ -45,7 +45,6 @@ engine:
     - ascii_segmentor
     - matcher
     - abc_segmentor
-    - affix_segmentor@pinyin_input
     - affix_segmentor@pinyin_lookup
     - affix_segmentor@bihua_lookup
     - affix_segmentor@emoji
@@ -147,7 +146,6 @@ pinyin_reverse_lookup:
     - "xform/^/〔/"
     - "xform/ /, /"
 
-
 bihua_reverse_lookup:
   tags: [ bihua_lookup ]
   dictionary: xf
@@ -167,6 +165,7 @@ zh_simp:
   option_name: zh_simp
   tips: all
 
+# 将明月拼音输出的繁体字转换为简体，包括反查到的繁体词库里的字。
 luna_pinyin_simp:
   option_name: simp_luna
   opencc_config: t2s.json
@@ -174,6 +173,7 @@ luna_pinyin_simp:
   tips: none
   allow_erase_comment: true
   comment_format:
+
 key_binder:
   bindings:
     - { when: paging, accept: minus, send: Page_Up }
