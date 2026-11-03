@@ -167,16 +167,8 @@ luna_pinyin_simp:
   comment_format:
 
 key_binder:
-  bindings:
-    - { when: has_menu, accept: Control+k, send: Page_Up }
-    - { when: has_menu, accept: Control+j, send: Page_Down }
-    - { when: has_menu, accept: Control+h, send: Up }
-    - { when: has_menu, accept: Control+l, send: Down}
-    - { when: always, accept: Control+space, toggle: ascii_mode }
-
-
+  import_preset: default
 menu:
-  page_size: 5
-
+  import_preset: default
 punctuator:
   import_preset: symbols
