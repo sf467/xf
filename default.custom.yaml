@@ -1,7 +1,7 @@
 patch:
   ascii_composer:
     good_old_caps_lock: true
-    switch_key: {Caps_Lock: noop, Control_L: noop, Control_R: noop, Eisu_toggle: noop, Shift_L: noop, Shift_R: noop}
+    switch_key: {Caps_Lock: clear, Control_L: noop, Control_R: noop, Eisu_toggle: noop, Shift_L: set_ascii_mode, Shift_R: unset_ascii_mode, Control+space: clear}
   schema_list:
     - {schema: xf}
   switcher:
