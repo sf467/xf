@@ -1,0 +1,47 @@
+patch:
+  "preset_keyboards/default":
+    name: 西风瘦码中文
+    author: 魔法帽
+    height: 30 #每行高度
+    width: 12.5 
+    keys:
+      - { click: a, swipe_up: A, long_click: select_all, swipe_down: IME_switch}
+      - { click: q, swipe_up: Q, long_click: "!", swipe_down: 1, hint: 1}
+      - { click: w, swipe_up: W, long_click: "@", swipe_down: 2, hint: 2}
+      - { click: e, swipe_up: E, long_click: "#", swipe_down: 3, hint: 3}
+      - { click: r, swipe_up: R, long_click: "$", swipe_down: 4, hint: 4}
+      - { click: t, swipe_up: T, long_click: "%" , swipe_down: 5, hint: 5}
+      - { click: o, swipe_up: O, long_click: "-"}
+      - { click: p, swipe_up: P, long_click: "_"}
+   
+      - { click: s, swipe_up: S, long_click: "~"}     
+      - { click: y, swipe_up: Y, long_click: "^", swipe_down: 6, hint: 6}
+      - { click: u, swipe_up: U, long_click: "&", swipe_down: 7, hint: 7}
+      - { click: i, swipe_up: I, long_click: "*", swipe_down: 8, hint: 8}
+      - { click: h, swipe_up: H, long_click: "(", swipe_down: 9, hint: 9}
+      - { click: j, swipe_up: J, long_click: ")", swipe_down: 0, hint: 0}
+      - { click: k, swipe_up: K, long_click: "["}
+      - { click: l, swipe_up: L, long_click: "]"}
+ 
+      - { click: z, swipe_up: Z, long_click: "`"}   
+      - { click: d, swipe_up: D, long_click: "\\"}
+      - { click: f, swipe_up: F, long_click: "|"}
+      - { click: g, swipe_up: G, long_click: "liquid_keyboard_symbollist"}
+      - { click: n, swipe_up: N, long_click: "{"}
+      - { click: m, swipe_up: M, long_click: "}"}  
+      - { click: ";", swipe_up: undo, long_click: ":"}
+      - { click: "'", swipe_up: redo, long_click: '"'}
+
+      - { click: Shift_L1, long_click: Shift_L2}
+      - { click: x, swipe_up: X, long_click: cut}
+      - { click: c, swipe_up: C, long_click: copy}
+      - { click: v, swipe_up: V, long_click: paste}
+      - { click: b, swipe_up: B, long_click: liquid_keyboard_clipboard}
+      - { click: ",", long_click: "<"}
+      - { click: ".", long_click: ">"}
+      - { click: "/", long_click: "?"}
+
+   ＃   - { click: Keyboard_number, long_click: Keyboard_mermaid, functional: false, width: 14.28}
+   ＃   - { click: space, long_click: Mode_switch, label: '西风瘦码', width: 57.14}  
+  ＃    - { click: BackSpace, width: 14.28}
+ ＃     - { click: Return2, width: 14.28}
