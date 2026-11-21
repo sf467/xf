@@ -1,19 +1,21 @@
+customization:
+  distribution_code_name: trime
+  distribution_version: "v3.3.13-28-gb1c2412e"
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Wed Nov 18 12:47:21 2026"
+  rime_version: 1.17.0
 patch:
   ascii_composer:
     good_old_caps_lock: true
-    switch_key: {Caps_Lock: clear, Control_L: noop, Control_R: noop, Eisu_toggle: noop, Shift_L: set_ascii_mode, Shift_R: unset_ascii_mode, Control+space: clear}
-
+    switch_key: {Caps_Lock: clear, "Control+space": clear, Control_L: noop, Control_R: noop, Eisu_toggle: noop, Shift_L: set_ascii_mode, Shift_R: unset_ascii_mode}
+  "key_binder/bindings":
+    - {accept: "Control+k", send: Page_Up, when: has_menu}
+    - {accept: "Control+j", send: Page_Down, when: has_menu}
+    - {accept: "Control+h", send: Up, when: has_menu}
+    - {accept: "Control+l", send: Down, when: has_menu}
+    - {accept: "Control+space", toggle: ascii_mode, when: always}
   schema_list:
     - {schema: xf}
-
   switcher:
     caption: "〔方案選單〕"
     hotkeys: ["Control+grave"]
-
-  key_binder/bindings:
-    - { when: has_menu, accept: Control+k, send: Page_Up }
-    - { when: has_menu, accept: Control+j, send: Page_Down }
-    - { when: has_menu, accept: Control+h, send: Up }
-    - { when: has_menu, accept: Control+l, send: Down}
-    - { when: always, accept: Control+space, toggle: ascii_mode }
-
